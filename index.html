@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎉 Aqiqah Kaivano Raza Atsya 🎉</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      /* Reset dan Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(
+          45deg,
+          #ff9a9e 0%,
+          #fecfef 25%,
+          #fecfef 50%,
+          #fad0c4 75%,
+          #ff9a9e 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 10s ease infinite;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+      }
+
+      /* Fun floating elements */
+      .floating-icons {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .floating-icon {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0.3;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .floating-icon:nth-child(1) {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .floating-icon:nth-child(2) {
+        top: 20%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+      .floating-icon:nth-child(3) {
+        top: 40%;
+        left: 5%;
+        animation-delay: 4s;
+      }
+      .floating-icon:nth-child(4) {
+        top: 60%;
+        right: 5%;
+        animation-delay: 6s;
+      }
+      .floating-icon:nth-child(5) {
+        bottom: 20%;
+        left: 15%;
+        animation-delay: 1s;
+      }
+      .floating-icon:nth-child(6) {
+        bottom: 10%;
+        right: 15%;
+        animation-delay: 3s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
+      /* Audio Control */
+      .audio-control {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: #ff6b6b;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+      }
+
+      .audio-control:hover {
+        background: #ff5252;
+        transform: scale(1.1);
+      }
+
+      .audio-control.playing {
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Header Section */
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 10px solid #ff6b6b;
+      }
+
+      .header::before {
+        content: "🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈🎈";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 3rem;
+        opacity: 0.1;
+        animation: balloonFloat 15s infinite linear;
+        z-index: 1;
+      }
+
+      @keyframes balloonFloat {
+        0% {
+          transform: translateX(-100px) translateY(0px);
+        }
+        100% {
+          transform: translateX(100px) translateY(-50px);
+        }
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .header h1 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        animation: bounceIn 2s ease;
+      }
+
+      .header .subtitle {
+        font-size: 1.3rem;
+        font-weight: 600;
+        opacity: 0.9;
+        animation: fadeInUp 2s ease 0.5s both;
+      }
+
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.3);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Welcome Section */
+      .welcome {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        padding: 60px 0;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 30px 30px 0 0;
+        margin-top: -20px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .welcome::before {
+        content: "🌟";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+        background: #ff6b6b;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: twinkle 2s infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          transform: translateX(-50%) scale(1.2);
+        }
+      }
+
+      .welcome h2 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2rem;
+        color: #6c5ce7;
+        margin-bottom: 30px;
+        animation: wiggle 3s ease-in-out infinite;
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-3deg);
+        }
+        75% {
+          transform: rotate(3deg);
+        }
+      }
+
+      .welcome-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #2d3436;
+        max-width: 100%;
+        margin: 0 auto;
+        font-weight: 600;
+      }
+
+      .guest-name {
+        color: #e84393;
+        font-weight: 800;
+        font-size: 1.4rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        animation: colorShift 3s ease-in-out infinite;
+      }
+
+      @keyframes colorShift {
+        0%,
+        100% {
+          color: #e84393;
+        }
+        33% {
+          color: #00b894;
+        }
+        66% {
+          color: #0984e3;
+        }
+      }
+
+      /* Child Section */
+      .child-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .child-section::before {
+        content: "👶🍼🧸🎀👶🍼🧸🎀👶🍼🧸🎀";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        opacity: 0.1;
+        animation: babyFloat 20s infinite linear;
+      }
+
+      @keyframes babyFloat {
+        0% {
+          transform: translateX(-100px);
+        }
+        100% {
+          transform: translateX(100px);
+        }
+      }
+
+      .child-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .child-info h3 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2.2rem;
+        color: #00b894;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .child-details {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 5px solid #ff6b6b;
+        animation: slideInUp 1.5s ease;
+      }
+
+      @keyframes slideInUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .child-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2d3436;
+      }
+
+      .child-detail i {
+        margin-right: 15px;
+        color: #ff6b6b;
+        width: 25px;
+        font-size: 1.5rem;
+        animation: wobble 2s infinite;
+      }
+
+      @keyframes wobble {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-5deg);
+        }
+        75% {
+          transform: rotate(5deg);
+        }
+      }
+
+      .child-photo {
+        text-align: center;
+        position: relative;
+      }
+
+      .child-photo::before {
+        content: "✨";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        font-size: 2rem;
+        animation: sparkle 2s infinite;
+      }
+
+      .child-photo::after {
+        content: "✨";
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        font-size: 2rem;
+        animation: sparkle 2s infinite 1s;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .child-photo img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 8px solid #ff6b6b;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        animation: photoFloat 3s ease-in-out infinite;
+      }
+
+      @keyframes photoFloat {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(2deg);
+        }
+      }
+
+      .child-photo img:hover {
+        transform: scale(1.1) rotate(5deg);
+        border-color: #00b894;
+      }
+
+      /* Event Details */
+      .event-details {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        padding: 80px 0;
+        position: relative;
+      }
+
+      .event-details::before {
+        content: "🎊🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊🎉";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 3rem;
+        opacity: 0.1;
+        animation: partyFloat 15s infinite linear;
+      }
+
+      @keyframes partyFloat {
+        0% {
+          transform: translateX(-50px) translateY(0px) rotate(0deg);
+        }
+        100% {
+          transform: translateX(50px) translateY(-30px) rotate(360deg);
+        }
+      }
+
+      .event-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .event-card {
+        background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        color: white;
+        padding: 35px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 4px solid #ff6b6b;
+        animation: cardPop 0.8s ease both;
+      }
+
+      .event-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .event-card:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes cardPop {
+        0% {
+          transform: scale(0.8) rotate(-5deg);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .event-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+      }
+
+      .event-card i {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        opacity: 0.9;
+        animation: iconSpin 4s linear infinite;
+      }
+
+      @keyframes iconSpin {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        50% {
+          transform: rotate(180deg) scale(1.2);
+        }
+        100% {
+          transform: rotate(360deg) scale(1);
+        }
+      }
+
+      .event-card h4 {
+        font-family: "Fredoka One", cursive;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .event-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        font-weight: 600;
+      }
+
+      /* Map Section */
+      .map-section {
+        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .map-section::before {
+        content: "🗺️📍🗺️📍🗺️📍🗺️📍🗺️📍🗺️📍";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        opacity: 0.1;
+        animation: mapFloat 12s infinite linear;
+      }
+
+      @keyframes mapFloat {
+        0% {
+          transform: translateX(-30px);
+        }
+        100% {
+          transform: translateX(30px);
+        }
+      }
+
+      .map-section h3 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: slideInLeft 1.5s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .map-container {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        margin: 0 auto;
+        border: 5px solid #ff6b6b;
+        animation: mapZoom 1.5s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes mapZoom {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+      }
+
+      /* Gallery Section */
+      .gallery {
+        background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+        padding: 80px 0;
+        position: relative;
+      }
+
+      .gallery::before {
+        content: "📸🌈📸🌈📸🌈📸🌈📸🌈📸🌈";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        opacity: 0.1;
+        animation: galleryFloat 18s infinite linear;
+      }
+
+      @keyframes galleryFloat {
+        0% {
+          transform: translateX(-40px) translateY(0px);
+        }
+        100% {
+          transform: translateX(40px) translateY(-20px);
+        }
+      }
+
+      .gallery h3 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: galleryTitle 2s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes galleryTitle {
+        0% {
+          transform: rotateY(-90deg);
+          opacity: 0;
+        }
+        100% {
+          transform: rotateY(0deg);
+          opacity: 1;
+        }
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery-item {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 4px solid #ff6b6b;
+        animation: galleryPop 1s ease both;
+      }
+
+      .gallery-item:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .gallery-item:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .gallery-item:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes galleryPop {
+        0% {
+          transform: scale(0.5) rotate(-10deg);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+        filter: brightness(1.1);
+      }
+
+      /* RSVP Section */
+      .rsvp-section {
+        background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .rsvp-section::before {
+        content: "💌📞💌📞💌📞💌📞💌📞💌📞";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        opacity: 0.1;
+        animation: rsvpFloat 10s infinite linear;
+      }
+
+      @keyframes rsvpFloat {
+        0% {
+          transform: translateX(-20px);
+        }
+        100% {
+          transform: translateX(20px);
+        }
+      }
+
+      .rsvp-section h3 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: rsvpTitle 2s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes rsvpTitle {
+        0% {
+          transform: scale(0.5) rotate(-180deg);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .rsvp-text {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+      }
+
+      .rsvp-button {
+        display: inline-block;
+        background: #25d366;
+        color: white;
+        padding: 15px 35px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border: 4px solid #ff6b6b;
+        animation: buttonPulse 2s infinite;
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes buttonPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .rsvp-button:hover {
+        background: #128c7e;
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        border-color: #00b894;
+      }
+
+      .rsvp-button i {
+        margin-right: 10px;
+        font-size: 1.5rem;
+        animation: iconWiggle 2s infinite;
+      }
+
+      @keyframes iconWiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-10deg);
+        }
+        75% {
+          transform: rotate(10deg);
+        }
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .footer::before {
+        content: "🌟💫🌟💫🌟💫🌟💫🌟💫🌟💫";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        opacity: 0.1;
+        animation: footerFloat 8s infinite linear;
+      }
+
+      @keyframes footerFloat {
+        0% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(10px);
+        }
+      }
+
+      .footer-content {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-signature {
+        font-style: italic;
+        opacity: 0.8;
+        font-size: 1.2rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Loading Animation */
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loading-text {
+        color: white;
+        font-family: "Fredoka One", cursive;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        animation: loadingText 2s infinite;
+      }
+
+      @keyframes loadingText {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid rgba(255, 255, 255, 0.3);
+        border-top: 6px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header {
+          padding: 60px 0;
+        }
+        .child-section,
+        .event-details,
+        .gallery,
+        .map-section,
+        .rsvp-section {
+          padding: 60px 0;
+        }
+        .floating-icon {
+          font-size: 1.5rem;
+        }
+        .audio-control {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .container {
+          max-width: 480px !important;
+        }
+        .child-content {
+          flex-direction: column !important;
+          text-align: center !important;
+        }
+        .event-grid {
+          display: flex !important;
+          flex-direction: column !important;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <div class="floating-icon">🎈</div>
+      <div class="floating-icon">🎀</div>
+      <div class="floating-icon">🧸</div>
+      <div class="floating-icon">🌟</div>
+      <div class="floating-icon">🎊</div>
+      <div class="floating-icon">🌈</div>
+    </div>
+
+    <!-- Audio Control -->
+    <button class="audio-control" onclick="toggleAudio()" id="audioBtn">
+      <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Audio Element -->
+    <audio id="backgroundAudio" loop>
+      <!-- Lagu anak-anak yang ceria -->
+      <source
+        src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+        type="audio/wav"
+      />
+      <source
+        src="https://freesound.org/data/previews/316/316847_5123451-lq.mp3"
+        type="audio/mpeg"
+      />
+      <!-- Fallback untuk browser yang tidak mendukung -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+      <div class="loading-text">🎉 Sedang Memuat Kebahagiaan... 🎉</div>
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content" data-aos="fade-up">
+          <h1>🎈 Aqiqah Anak Kami 🎈</h1>
+          <p class="subtitle">✨ Kaivano Raza Atsya ✨</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+      <div class="container">
+        <div data-aos="fade-up">
+          <h2>🌟 Assalamu'alaikum Warahmatullahi Wabarakatuh 🌟</h2>
+          <div class="welcome-text">
+            <p>
+              🎊 Dengan penuh rasa syukur kepada Allah SWT, kami mengundang
+              <span class="guest-name" id="guestName">Bapak/Ibu/Saudara/i</span>
+              untuk hadir dalam acara Aqiqah putra kami yang lucu dan
+              menggemaskan! 👶
+            </p>
+            <br />
+            <p>
+              🌈 Kehadiran dan do'a dari Anda adalah kehormatan bagi kami dalam
+              merayakan momen bahagia ini bersama keluarga besar! 🤗
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Child Section -->
+    <section class="child-section">
+      <div class="container">
+        <div class="child-content">
+          <div class="child-info" data-aos="fade-right">
+            <h3>👶 Kaivano Raza Atsya 👶</h3>
+            <div class="child-details">
+              <div class="child-detail">
+                <i class="fas fa-calendar-alt"></i>
+                <span>🎂 Lahir: 5 Mei 2025</span>
+              </div>
+              <div class="child-detail">
+                <i class="fas fa-weight"></i>
+                <span>⚖️ Berat: 3.1 kg</span>
+              </div>
+              <div class="child-detail">
+                <i class="fas fa-ruler"></i>
+                <span>📏 Panjang: 48 cm</span>
+              </div>
+              <div class="child-detail">
+                <i class="fas fa-heart"></i>
+                <span>💕 Anak kedua kami</span>
+              </div>
+            </div>
+          </div>
+          <div class="child-photo" data-aos="fade-left">
+            <img src="gambar-1.jpg" alt="Kaivano Raza Atsya" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="event-details">
+      <div class="container">
+        <div class="event-grid">
+          <div class="event-card" data-aos="fade-up" data-aos-delay="0">
+            <i class="fas fa-calendar-day"></i>
+            <h4>📅 Tanggal Istimewa</h4>
+            <p>🗓️ Sabtu, 12 Juli 2025</p>
+          </div>
+          <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-clock"></i>
+            <h4>⏰ Waktu Kebahagiaan</h4>
+            <p>🕘 09:00 WIB - Selesai</p>
+          </div>
+          <div class="event-card" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>📍 Lokasi Acara</h4>
+            <p>
+              🏡 Tanjuang Balik, <br />🌾 Kabupaten Lima Puluh Kota, <br />🏞️
+              Sumatera Barat
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <h3 data-aos="fade-up">🗺️ Lokasi Acara Aqiqah 🗺️</h3>
+        <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.7948419135173!2d100.76251517496458!3d0.19656029980150969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTEnNDcuNiJOIDEwMMKwNDUnNTQuMyJF!5e0!3m2!1sid!2sid!4v1752141929498!5m2!1sid!2sid"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+      <div class="container">
+        <h3 data-aos="fade-up">📸 Galeri Kebahagiaan 📸</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
+            <img src="gambar-1.jpg" alt="Keluarga Bahagia" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="gambar-2.jpg" alt="Keluarga Bahagia" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="gambar-3.jpg" alt="Keluarga Bahagia" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="gambar-4.jpg" alt="Keluarga Bahagia" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+      <div class="container">
+        <div data-aos="fade-up">
+          <h3>💌 Konfirmasi Kehadiran 💌</h3>
+          <p class="rsvp-text">
+            🤗 Mohon konfirmasi kehadiran Anda melalui WhatsApp kami. Terima
+            kasih atas perhatian dan waktu yang Anda berikan untuk berbagi
+            kebahagiaan! 🙏
+          </p>
+          <a
+            target="_blank"
+            href="https://wa.me/6282283853334?text=Assalamu%27alaikum%2C%20saya%20akan%20hadir%20dalam%20acara%20Aqiqah%20Kaivano%20Raza%20Atsya%20%F0%9F%8E%89%F0%9F%91%B6"
+            class="rsvp-button"
+          >
+            <i class="fab fa-whatsapp"></i>
+            Konfirmasi via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            🌟 Barakallahu laka wa baraka alaika wa jama'a bainakuma fi khair 🌟
+          </p>
+          <p>
+            💫 "Semoga Allah memberkahi kalian dan memberkahi atas kalian serta
+            mengumpulkan kalian dalam kebaikan" 💫
+          </p>
+        </div>
+        <div class="footer-signature">
+          <p>🤲 Wassalamu'alaikum Warahmatullahi Wabarakatuh 🤲</p>
+          <p><strong>🏠 Keluarga Bahagia Irsyad & Titik 🏠</strong></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
+
+      // Audio Control
+      let isPlaying = false;
+      const audio = document.getElementById("backgroundAudio");
+      const audioBtn = document.getElementById("audioBtn");
+
+      function toggleAudio() {
+        if (isPlaying) {
+          audio.pause();
+          audioBtn.innerHTML = '<i class="fas fa-music"></i>';
+          audioBtn.classList.remove("playing");
+          isPlaying = false;
+        } else {
+          audio.play().catch((e) => {
+            console.log("Audio play failed:", e);
+            // Fallback: create simple melody using Web Audio API
+            playSimpleMelody();
+          });
+          audioBtn.innerHTML = '<i class="fas fa-pause"></i>';
+          audioBtn.classList.add("playing");
+          isPlaying = true;
+        }
+      }
+
+      // Simple melody fallback using Web Audio API
+      function playSimpleMelody() {
+        const audioContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        const notes = [
+          261.63, 293.66, 329.63, 349.23, 392.0, 440.0, 493.88, 523.25,
+        ]; // C major scale
+        let noteIndex = 0;
+
+        function playNote() {
+          if (!isPlaying) return;
+
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+
+          oscillator.frequency.value = notes[noteIndex % notes.length];
+          oscillator.type = "sine";
+
+          gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(
+            0.01,
+            audioContext.currentTime + 0.5
+          );
+
+          oscillator.start(audioContext.currentTime);
+          oscillator.stop(audioContext.currentTime + 0.5);
+
+          noteIndex++;
+
+          if (isPlaying) {
+            setTimeout(playNote, 600);
+          }
+        }
+
+        playNote();
+      }
+
+      // Auto-play audio when page loads (with user interaction)
+      document.addEventListener(
+        "click",
+        function () {
+          if (!isPlaying) {
+            toggleAudio();
+          }
+        },
+        { once: true }
+      );
+
+      // Loading Screen
+      window.addEventListener("load", function () {
+        const loading = document.getElementById("loading");
+        setTimeout(() => {
+          loading.classList.add("hidden");
+        }, 2000);
+      });
+
+      // Get guest name from URL parameter
+      function getGuestName() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get("name");
+        const guestNameElement = document.getElementById("guestName");
+
+        if (name) {
+          const decodedName = decodeURIComponent(name);
+          const capitalizedName =
+            decodedName.charAt(0).toUpperCase() + decodedName.slice(1);
+          guestNameElement.textContent = capitalizedName;
+        } else {
+          guestNameElement.textContent = "Tamu Istimewa";
+        }
+      }
+
+      // Initialize guest name when page loads
+      document.addEventListener("DOMContentLoaded", getGuestName);
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add fun interactive effects
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add click effect to cards
+        const cards = document.querySelectorAll(".event-card, .gallery-item");
+        cards.forEach((card) => {
+          card.addEventListener("click", function () {
+            this.style.transform = "scale(0.95) rotate(2deg)";
+            setTimeout(() => {
+              this.style.transform = "";
+            }, 150);
+          });
+        });
+
+        // Add confetti effect on button click
+        const rsvpButton = document.querySelector(".rsvp-button");
+        rsvpButton.addEventListener("click", function (e) {
+          createConfetti(e.pageX, e.pageY);
+        });
+
+        // Random emoji rain effect
+        setInterval(createEmojiRain, 5000);
+      });
+
+      // Confetti effect
+      function createConfetti(x, y) {
+        const confettiCount = 20;
+        const confettiEmojis = ["🎊", "🎉", "🎈", "🌟", "✨", "🎀", "🌈"];
+
+        for (let i = 0; i < confettiCount; i++) {
+          const confetti = document.createElement("div");
+          confetti.style.position = "fixed";
+          confetti.style.left = x + "px";
+          confetti.style.top = y + "px";
+          confetti.style.fontSize = "20px";
+          confetti.style.pointerEvents = "none";
+          confetti.style.zIndex = "9999";
+          confetti.textContent =
+            confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
+
+          document.body.appendChild(confetti);
+
+          const randomX = (Math.random() - 0.5) * 200;
+          const randomY = -Math.random() * 200;
+          const randomRotation = Math.random() * 360;
+
+          confetti.animate(
+            [
+              { transform: "translate(0, 0) rotate(0deg)", opacity: 1 },
+              {
+                transform: `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`,
+                opacity: 0,
+              },
+            ],
+            {
+              duration: 2000,
+              easing: "ease-out",
+            }
+          ).onfinish = () => {
+            confetti.remove();
+          };
+        }
+      }
+
+      // Emoji rain effect
+      function createEmojiRain() {
+        const rainEmojis = ["👶", "🍼", "🧸", "🎈", "🌟", "✨", "🎀", "🌈"];
+        const emoji = document.createElement("div");
+
+        emoji.style.position = "fixed";
+        emoji.style.top = "-50px";
+        emoji.style.left = Math.random() * window.innerWidth + "px";
+        emoji.style.fontSize = "30px";
+        emoji.style.pointerEvents = "none";
+        emoji.style.zIndex = "1";
+        emoji.style.opacity = "0.7";
+        emoji.textContent =
+          rainEmojis[Math.floor(Math.random() * rainEmojis.length)];
+
+        document.body.appendChild(emoji);
+
+        emoji.animate(
+          [
+            { transform: "translateY(0) rotate(0deg)" },
+            {
+              transform: `translateY(${
+                window.innerHeight + 100
+              }px) rotate(360deg)`,
+            },
+          ],
+          {
+            duration: 5000 + Math.random() * 3000,
+            easing: "linear",
+          }
+        ).onfinish = () => {
+          emoji.remove();
+        };
+      }
+
+      // Simple countdown timer
+      function updateCountdown() {
+        const eventDate = new Date("2025-07-12T09:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        if (distance > 0) {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+
+          console.log(
+            `🎊 ${days} hari, ${hours} jam, ${minutes} menit lagi! 🎊`
+          );
+        }
+      }
+
+      // Update countdown every minute
+      setInterval(updateCountdown, 60000);
+
+      // Add scroll effects
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const header = document.querySelector(".header");
+        if (header) {
+          header.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+      });
+
+      // Surprise click effects
+      document.addEventListener("click", function (e) {
+        // Random sparkle effect on click
+        if (Math.random() < 0.3) {
+          const sparkle = document.createElement("div");
+          sparkle.style.position = "fixed";
+          sparkle.style.left = e.clientX + "px";
+          sparkle.style.top = e.clientY + "px";
+          sparkle.style.fontSize = "20px";
+          sparkle.style.pointerEvents = "none";
+          sparkle.style.zIndex = "9999";
+          sparkle.textContent = "✨";
+
+          document.body.appendChild(sparkle);
+
+          sparkle.animate(
+            [
+              { transform: "scale(0) rotate(0deg)", opacity: 1 },
+              { transform: "scale(1.5) rotate(180deg)", opacity: 0 },
+            ],
+            {
+              duration: 1000,
+              easing: "ease-out",
+            }
+          ).onfinish = () => {
+            sparkle.remove();
+          };
+        }
+      });
+    </script>
+  </body>
+</html>
